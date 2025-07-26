@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      args:
+        - TOKEN=${TOKEN}
+    container_name: crypto-dashboard
+    ports:
+      - '3000:3000'
+    env_file:
+      - .env
+    environment:
+      - TOKEN=${TOKEN}
+      - NEXT_PUBLIC_API_URL=${NEXT_PUBLIC_API_URL}
+    restart: unless-stopped
