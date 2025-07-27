@@ -54,7 +54,7 @@ export default function CoinDetailPage() {
           </div>
 
           <div className="mt-10 max-w-2xl text-xl/8 font-thin leading-9 text-gray-600 dark:text-gray-300">
-            <p className="">
+            <p className="font-semibold">
               Price: ${coin.market_data.current_price.usd.toLocaleString()}
             </p>
             <ul
