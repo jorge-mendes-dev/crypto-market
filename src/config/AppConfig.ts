@@ -1,6 +1,6 @@
 export const AppConfig = {
-  title: 'HUB-XP Coin Market',
-  description: 'A Next.js application for HUB-XP Coin Market',
+  title: 'Coin Market',
+  description: 'A Next.js application for Coin Market',
   author: 'Jorge Mendes',
   version: 'version: 1.0.0',
   locale: 'en',
@@ -10,7 +10,6 @@ export const AppConfig = {
   theme_color: '#4f46e5',
   navigation: [
     { name: 'Home', href: '/' },
-    { name: 'Dashboard', href: '/dashboard' },
     { name: 'About', href: '/about' },
   ],
   keywords: [
@@ -22,7 +21,7 @@ export const AppConfig = {
     'Investing',
   ],
   header: {
-    title: 'HUB-XP Market',
+    title: 'Coin Market',
     description: 'Main crypto currencies in the market with real-time data.',
   },
   error: {
@@ -32,11 +31,17 @@ export const AppConfig = {
   topCryptos: {
     title: 'Top 20 Crypto Currencies',
     description: 'List of the top 20 crypto currencies by market cap.',
+    details: 'View details',
     cardHeaders: [
       { name: 'Ranking', key: 'ranking' },
       { name: 'Name', key: 'name' },
       { name: 'Price', key: 'price' },
       { name: 'Variation (24h)', key: 'variation' },
+      { name: 'Details', key: 'details' },
+    ],
+    tabsTitle: [
+      { name: 'Cards', current: true },
+      { name: 'Table', current: false },
     ],
   },
 };

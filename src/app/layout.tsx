@@ -44,7 +44,7 @@ export default function RootLayout({
   return (
     <html
       lang={locale}
-      className="h-full scroll-smooth bg-white transition-opacity duration-300 ease-linear dark:bg-zinc-900"
+      className="scroll-smooth bg-white transition-opacity duration-300 ease-linear dark:bg-zinc-900"
     >
       <head>
         <link rel="icon" href="/favicon.ico" />
@@ -60,7 +60,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="bg-white dark:bg-zinc-900">
+        <div className="h-full min-h-screen bg-white dark:bg-zinc-900">
           <Navbar logo={logo} navigation={navigation} title={title} />
           <Header
             title={headerTitle}

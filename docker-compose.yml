@@ -5,13 +5,14 @@ services:
     build:
       context: .
       args:
-        - TOKEN=${TOKEN}
+        - NEXT_PUBLIC_TOKEN=${NEXT_PUBLIC_TOKEN}
     container_name: crypto-dashboard
     ports:
       - '3000:3000'
     env_file:
       - .env
     environment:
-      - TOKEN=${TOKEN}
+      - NEXT_PUBLIC_TOKEN=${NEXT_PUBLIC_TOKEN}
       - NEXT_PUBLIC_API_URL=${NEXT_PUBLIC_API_URL}
+      - NEXT_PUBLIC_API_KEY=${NEXT_PUBLIC_API_KEY}
     restart: unless-stopped

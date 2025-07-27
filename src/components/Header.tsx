@@ -70,7 +70,7 @@ export default function Header({
           <Lottie
             animationData={cryptocurrency}
             loop={true}
-            className="h-auto w-full rounded-full border-2 border-indigo-700 shadow-lg"
+            className="h-40 w-40 rounded-full border-2 border-indigo-700 shadow-lg sm:h-auto sm:w-full"
           />
         </div>
       </div>

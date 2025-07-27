@@ -18,11 +18,13 @@ Dashboard for listing the main crypto in real time.
 ## 🚀 Run the Project
 
 Necessary to setup the .env keys
+
 ```bash
 NEXT_PUBLIC_TOKEN=
 NEXT_PUBLIC_BACKEND_API=
 NEXT_PUBLIC_API_URL=
 ```
+
 ---
 
 After it run the project:

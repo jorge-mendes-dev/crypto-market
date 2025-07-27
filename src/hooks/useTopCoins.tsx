@@ -2,7 +2,7 @@ import { useQuery, UseQueryResult } from '@tanstack/react-query';
 import { Coin } from '@/types/Coin';
 import { BACKEND_API, TOKEN } from '@/config/constants';
 
-export function useTopCryptos(): UseQueryResult<Coin[]> {
+export function useTopCoins(): UseQueryResult<Coin[]> {
   return useQuery<Coin[]>({
     queryKey: ['top-cryptos'],
     queryFn: async () => {
