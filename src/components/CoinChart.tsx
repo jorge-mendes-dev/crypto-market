@@ -12,6 +12,7 @@ import {
   TimeScale,
 } from 'chart.js';
 import 'chartjs-adapter-date-fns';
+import type { ChartOptions } from 'chart.js';
 
 ChartJS.register(
   LineElement,
@@ -46,18 +47,29 @@ export default function CoinChart({ prices }: CoinChartProps) {
     ],
   };
 
-  const options = {
+  const options: ChartOptions<'line'> = {
     responsive: true,
     maintainAspectRatio: false,
     interaction: {
-      mode: 'index' as const,
+      mode: 'index',
       intersect: false,
     },
     scales: {
       x: {
-        type: 'time' as const,
+        type: 'time',
         time: {
-          unit: 'day',
+          unit: 'day' as
+            | 'millisecond'
+            | 'second'
+            | 'minute'
+            | 'hour'
+            | 'day'
+            | 'week'
+            | 'month'
+            | 'quarter'
+            | 'year'
+            | false
+            | undefined,
           tooltipFormat: 'PPpp',
         },
         ticks: {},
@@ -67,7 +79,10 @@ export default function CoinChart({ prices }: CoinChartProps) {
       },
       y: {
         ticks: {
-          callback: (value: number) => `$${value.toFixed(2)}`,
+          callback: (tickValue: string | number) => {
+            const num = typeof tickValue === 'number' ? tickValue : parseFloat(tickValue);
+            return `$${num.toFixed(2)}`;
+          },
           color: '#4B5563',
         },
         grid: {
