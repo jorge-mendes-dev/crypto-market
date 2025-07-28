@@ -22,7 +22,7 @@ export default function CoinDetailPage() {
     id as string
   );
 
-  if (isLoading || loadingChart) return <Skeleton type="card" />;
+  if (isLoading || loadingChart) return <Skeleton type="grid" />;
   if (!coin) return <div className="p-6 text-white">Coin data not found.</div>;
 
   return (

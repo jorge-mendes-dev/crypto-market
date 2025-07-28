@@ -14,10 +14,7 @@ const Grid = ({ items }: SkeletonProps) => (
 );
 
 const Card = () => (
-  <div className="animate-pulse divide-y divide-gray-200 overflow-hidden rounded-lg bg-white shadow-sm dark:bg-zinc-800">
-    <div className="px-4 py-5 sm:px-6">
-      <div className="size-40 h-4 rounded bg-gray-200 dark:bg-zinc-500"></div>
-    </div>
+  <div className="animate-pulse overflow-hidden rounded-2xl bg-white shadow-sm dark:bg-zinc-800">
     <div className="flex flex-col gap-2 px-4 py-5 sm:p-6">
       <div className="flex flex-row items-start gap-4">
         <div className="flex flex-1 flex-col gap-1">
@@ -28,12 +25,11 @@ const Card = () => (
           <div className="mt-1 size-40 h-2 rounded bg-gray-200 dark:bg-zinc-500"></div>
           <div className="mt-1 size-10 h-2 rounded bg-gray-200 dark:bg-zinc-500"></div>
         </div>
-        <div className="size-20 h-20 flex-shrink-0 rounded bg-gray-200 dark:bg-zinc-500"></div>
+        <div className="size-20 h-20 flex-shrink-0 rounded-full bg-gray-200 dark:bg-zinc-500"></div>
       </div>
     </div>
-    <div className="px-4 py-4 sm:px-6">
+    <div className="px-4 py-4 sm:px-6 flex justify-end">
       <div className="size-20 h-2 rounded bg-gray-200 dark:bg-zinc-500"></div>
-      <div className="mt-1 size-20 h-2 rounded bg-gray-200 dark:bg-zinc-500"></div>
     </div>
   </div>
 );

@@ -14,7 +14,7 @@ export default function Table({
   details,
 }: TableProps): React.JSX.Element {
   return (
-    <table className="min-w-full border-collapse transform cursor-pointer overflow-hidden rounded-lg bg-white shadow-lg transition duration-300 ease-in-out dark:bg-zinc-800">
+    <table className="min-w-full border-collapse transform cursor-pointer overflow-hidden rounded-lg bg-gray-100 shadow-lg transition duration-300 ease-in-out dark:bg-zinc-800">
       <thead className="bg-indigo-100 text-left text-indigo-600 dark:bg-indigo-700 dark:text-zinc-300">
         <tr>
           {cardHeaders?.map(header => (
@@ -28,7 +28,7 @@ export default function Table({
         {data?.map((coin, index) => (
           <tr
             key={coin.id}
-            className="border-t border-zinc-200 transition hover:bg-zinc-50 dark:border-zinc-600 dark:hover:bg-zinc-700"
+            className="border-t border-zinc-200 transition hover:bg-zinc-300 dark:border-zinc-600 dark:hover:bg-zinc-700"
           >
             <td className="px-4 py-3 text-sm dark:text-zinc-100">
               {index + 1}
@@ -62,7 +62,7 @@ export default function Table({
             <td className="px-4 py-3 text-sm">
               <Link
                 href={`/coin/${coin.id}`}
-                className="text-indigo-400 hover:text-indigo-300"
+                className="text-indigo-700 hover:text-indigo-600 dark:text-indigo-400 dark:hover:text-indigo-300"
               >
                 {details || 'View Details'}
               </Link>
