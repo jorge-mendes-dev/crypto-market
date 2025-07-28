@@ -6,11 +6,9 @@ export const AppConfig = {
   locale: 'en',
   url: '/',
   bg_color: '#ffffff',
-  logo: '/logo.png',
   theme_color: '#4f46e5',
   navigation: [
-    { name: 'Home', href: '/' },
-    { name: 'About', href: '/about' },
+    { name: 'Home', href: '/' }
   ],
   keywords: [
     'Finance',
@@ -44,4 +42,12 @@ export const AppConfig = {
       { name: 'Table', current: false },
     ],
   },
+  seeMore: {
+    title: 'See more about',
+    lastSevenDays: 'Last 7 days variation',
+    backHome: 'Back to Home',
+    price: 'Price',
+    marketCap: 'Market Cap',
+    volume: 'Volume (24h)',
+  }
 };

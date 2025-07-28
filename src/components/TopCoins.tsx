@@ -39,20 +39,22 @@ export default function TopCoins({
 
   return (
     <section className="container mx-auto px-4 py-6 md:px-8">
-      <div className="bg-white dark:bg-zinc-900">
-        <div className="px-6 py-24 sm:px-6 sm:py-32 lg:px-8">
+      <div className="bg-indigo-100 dark:bg-zinc-900 rounded">
+        <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:flex lg:items-center lg:justify-between lg:px-8 ">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-balance text-4xl font-semibold tracking-tight text-gray-900 dark:text-white sm:text-5xl">
+            <h2 className="text-balance text-4xl font-semibold tracking-tight text-indigo-700 dark:text-white sm:text-5xl">
               {title}
             </h2>
-            <p className="mx-auto mt-6 max-w-xl text-pretty text-lg/8 text-gray-600 dark:text-indigo-400">
+            <p className="mx-auto mt-6 max-w-xl text-pretty text-lg/8 text-gray-700 dark:text-indigo-400">
               {description}
             </p>
           </div>
         </div>
       </div>
 
-      <Tabs tabs={tabs} setTab={updateTabs} />
+      <div className='mt-2'>
+        <Tabs tabs={tabs} setTab={updateTabs} />
+      </div>
 
       <div className="overflow-x-auto">
         {tabs.find(tab => tab.current)?.name === 'Cards' ? (

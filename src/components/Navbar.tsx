@@ -132,9 +132,9 @@ export default function Navbar({
                 >
                   <span className="sr-only">Toggle Theme</span>
                   {isDarkMode ? (
-                    <SunIcon className="size-6" aria-hidden="true" />
+                    <SunIcon className="size-6 text-yellow-500 bg-yellow-50" aria-hidden="true" />
                   ) : (
-                    <MoonIcon className="size-6" aria-hidden="true" />
+                    <MoonIcon className="size-6 text-blue-500 bg-blue-50" aria-hidden="true" />
                   )}
                 </button>
               </div>

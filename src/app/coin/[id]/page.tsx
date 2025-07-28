@@ -6,6 +6,7 @@ import { useCoinMarketChart } from '@/hooks/useCoinMarketChart';
 import CoinChart from '@/components/CoinChart';
 import { CheckCircleIcon } from '@heroicons/react/20/solid';
 import Skeleton from '@/components/Skeleton';
+import { AppConfig } from '@/config/AppConfig';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -13,6 +14,8 @@ export default function CoinDetailPage() {
   const params = useParams();
   const idParam = params && params['id'];
   const id = Array.isArray(idParam) ? idParam[0] : idParam;
+  const { seeMore } = AppConfig;
+  const { title, lastSevenDays, backHome, volume, marketCap, price } = seeMore;
 
   const { data: coin, isLoading } = useCoinDetails(id as string);
   const { data: chartData, isLoading: loadingChart } = useCoinMarketChart(
@@ -24,10 +27,10 @@ export default function CoinDetailPage() {
 
   return (
     <main>
-      <div className="bg-white px-6 py-32 dark:bg-zinc-900 lg:px-8">
+      <div className="bg-gray-50 px-6 py-32 dark:bg-zinc-900 lg:px-8">
         <div className="mx-auto max-w-3xl text-base/7 text-gray-700 dark:text-gray-400">
           <p className="text-base/7 font-semibold text-indigo-600 dark:text-indigo-400">
-            See more about
+            {title}
           </p>
           <h1 className="mt-2 flex items-center gap-4 text-pretty text-4xl font-semibold tracking-tight text-gray-900 dark:text-indigo-600 sm:text-5xl">
             {coin.name} ({coin.symbol.toUpperCase()}){' '}
@@ -55,7 +58,7 @@ export default function CoinDetailPage() {
 
           <div className="mt-10 max-w-2xl text-xl/8 font-thin leading-9 text-gray-600 dark:text-gray-300">
             <p className="font-semibold">
-              Price: ${coin.market_data.current_price.usd.toLocaleString()}
+              {price}: ${coin.market_data.current_price.usd.toLocaleString()}
             </p>
             <ul
               role="list"
@@ -68,7 +71,7 @@ export default function CoinDetailPage() {
                 />
                 <span>
                   <strong className="font-semibold text-gray-900 dark:text-gray-100">
-                    Market Cap:
+                    {marketCap}:
                   </strong>{' '}
                   ${coin.market_data.market_cap.usd.toLocaleString()}
                 </span>
@@ -80,7 +83,7 @@ export default function CoinDetailPage() {
                 />
                 <span>
                   <strong className="font-semibold text-gray-900 dark:text-gray-100">
-                    24h:
+                    {volume}:
                   </strong>{' '}
                   {coin.market_data.price_change_percentage_24h.toFixed(2)}%
                 </span>
@@ -89,15 +92,15 @@ export default function CoinDetailPage() {
           </div>
 
           <h2 className="mb-6 mt-16 text-pretty text-3xl font-semibold tracking-tight text-gray-900 dark:text-indigo-600 sm:text-4xl">
-            Last 7 days variation
+            {lastSevenDays}
           </h2>
           <CoinChart prices={chartData ? chartData.prices : []} />
 
           <Link
             href="/"
-            className="mt-4 inline-block text-indigo-400 hover:underline"
+            className="mt-6 inline-block text-indigo-700 dark:text-indigo-400 hover:underline"
           >
-            Back to Home
+            {backHome}
           </Link>
         </div>
       </div>

@@ -53,16 +53,16 @@ export default function Header({
       <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:flex lg:items-center lg:gap-x-10 lg:px-8 lg:py-40">
         <div className="mx-auto max-w-2xl lg:mx-0 lg:flex-auto">
           <div className="flex">
-            <div className="relative flex items-center gap-x-4 rounded-full bg-white px-4 py-1 text-sm/6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20 dark:bg-indigo-900">
+            <div className="relative flex items-center gap-x-4 rounded-full bg-indigo-50 px-4 py-1 text-sm/6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20 dark:bg-indigo-900">
               <span className="font-semibold text-indigo-600 dark:text-indigo-100">
                 {badge}
               </span>
             </div>
           </div>
-          <h1 className="mt-10 text-pretty text-5xl font-semibold tracking-tight text-gray-900 dark:text-indigo-700 sm:text-7xl">
+          <h1 className="mt-10 text-pretty text-5xl font-semibold tracking-tight text-indigo-700 sm:text-7xl">
             {title}
           </h1>
-          <p className="mt-8 text-pretty text-lg font-medium text-gray-600 dark:text-white sm:text-xl/8">
+          <p className="mt-8 text-pretty text-lg font-medium text-gray-900 dark:text-white sm:text-xl/8">
             {description}
           </p>
         </div>

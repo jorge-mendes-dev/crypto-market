@@ -1,4 +1,4 @@
-# Crypto Dashboard HUB-XP 🪙
+# Crypto Dashboard 🪙
 
 Dashboard for listing the main crypto in real time.
 

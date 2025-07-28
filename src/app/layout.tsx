@@ -4,8 +4,10 @@ import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import Header from '@/components/Header';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
+import { ThemeProvider } from '@/context/ThemeContext';
 import { AppConfig } from '@/config/AppConfig';
 import { Providers } from './providers';
+import Crypto from '@/app/Crypto.svg'
 
 import './globals.css';
 
@@ -30,7 +32,6 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const {
-    logo,
     navigation,
     title,
     header: { title: headerTitle, description: headerDescription },
@@ -40,15 +41,14 @@ export default function RootLayout({
     keywords,
     author,
   } = AppConfig;
-
   return (
     <html
       lang={locale}
-      className="scroll-smooth bg-white transition-opacity duration-300 ease-linear dark:bg-zinc-900"
+      className="scroll-smooth transition-opacity duration-300 ease-linear"
     >
       <head>
         <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/assets/logo.png" />
+        <link rel="apple-touch-icon" href="/Crypto.png" />
         <meta name="theme-color" content={theme_color} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content={headerDescription} />
@@ -57,21 +57,23 @@ export default function RootLayout({
         <meta name="application-name" content={title} />
         <meta name="msapplication-TileColor" content={theme_color} />
       </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <div className="h-full min-h-screen bg-white dark:bg-zinc-900">
-          <Navbar logo={logo} navigation={navigation} title={title} />
-          <Header
-            title={headerTitle}
-            description={headerDescription}
-            badge={version}
-          />
-          <Providers>
-            <ErrorBoundary>{children}</ErrorBoundary>
-          </Providers>
-          <Footer title={title} />
-        </div>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <ThemeProvider>
+          <div className="h-full min-h-screen bg-gray-50 dark:bg-zinc-900">
+            <Navbar logo={Crypto} navigation={navigation} title={title} />
+            <Header
+              title={headerTitle}
+              description={headerDescription}
+              badge={version}
+            />
+            <Providers>
+              <ErrorBoundary>
+                {children}
+              </ErrorBoundary>
+            </Providers>
+            <Footer title={title} />
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );

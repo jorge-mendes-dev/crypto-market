@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 
 export function useTheme() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
   useEffect(() => {
     const prefersDark = window.matchMedia(
