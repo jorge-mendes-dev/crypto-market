@@ -40,7 +40,7 @@ const mockData: Array<Coin> = [
     atl: 0,
     atl_change_percentage: 0,
     atl_date: '',
-    last_updated: ''
+    last_updated: '',
   },
   {
     id: 'ethereum',
@@ -64,13 +64,15 @@ const mockData: Array<Coin> = [
     atl: 0,
     atl_change_percentage: 0,
     atl_date: '',
-    last_updated: ''
+    last_updated: '',
   },
 ];
 
 describe('Table', () => {
   it('renders headers and coin data', () => {
-    render(<Table data={mockData} cardHeaders={mockHeaders} details="See more" />);
+    render(
+      <Table data={mockData} cardHeaders={mockHeaders} details="See more" />
+    );
     mockHeaders.forEach(header => {
       expect(screen.getByText(header.name)).toBeInTheDocument();
     });

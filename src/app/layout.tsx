@@ -7,7 +7,7 @@ import { ErrorBoundary } from '@/components/ErrorBoundary';
 import { ThemeProvider } from '@/context/ThemeContext';
 import { AppConfig } from '@/config/AppConfig';
 import { Providers } from './providers';
-import Crypto from '@/app/Crypto.svg'
+import Crypto from '@/app/Crypto.svg';
 
 import './globals.css';
 
@@ -57,7 +57,9 @@ export default function RootLayout({
         <meta name="application-name" content={title} />
         <meta name="msapplication-TileColor" content={theme_color} />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
         <ThemeProvider>
           <div className="h-full min-h-screen bg-gray-50 dark:bg-zinc-900">
             <Navbar logo={Crypto} navigation={navigation} title={title} />
@@ -67,9 +69,7 @@ export default function RootLayout({
               badge={version}
             />
             <Providers>
-              <ErrorBoundary>
-                {children}
-              </ErrorBoundary>
+              <ErrorBoundary>{children}</ErrorBoundary>
             </Providers>
             <Footer title={title} />
           </div>

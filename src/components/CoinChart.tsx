@@ -80,7 +80,8 @@ export default function CoinChart({ prices }: CoinChartProps) {
       y: {
         ticks: {
           callback: (tickValue: string | number) => {
-            const num = typeof tickValue === 'number' ? tickValue : parseFloat(tickValue);
+            const num =
+              typeof tickValue === 'number' ? tickValue : parseFloat(tickValue);
             return `$${num.toFixed(2)}`;
           },
           color: '#4B5563',

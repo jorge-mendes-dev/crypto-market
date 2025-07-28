@@ -4,7 +4,9 @@ interface SkeletonProps {
 }
 
 const Grid = ({ items }: SkeletonProps) => (
-  <div className={`grid container mx-auto w-full grid-cols-1 gap-6 p-6 md:grid-cols-4`}>
+  <div
+    className={`container mx-auto grid w-full grid-cols-1 gap-6 p-6 md:grid-cols-4`}
+  >
     {Array.from({ length: typeof items === 'number' ? items : 4 }).map(
       (_, idx) => (
         <Card key={idx} />
@@ -28,7 +30,7 @@ const Card = () => (
         <div className="size-20 h-20 flex-shrink-0 rounded-full bg-gray-200 dark:bg-zinc-500"></div>
       </div>
     </div>
-    <div className="px-4 py-4 sm:px-6 flex justify-end">
+    <div className="flex justify-end px-4 py-4 sm:px-6">
       <div className="size-20 h-2 rounded bg-gray-200 dark:bg-zinc-500"></div>
     </div>
   </div>

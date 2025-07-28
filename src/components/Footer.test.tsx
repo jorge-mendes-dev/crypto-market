@@ -9,6 +9,10 @@ describe('Footer', () => {
     render(<Footer title={title} />);
 
     expect(screen.getByText(`${title}`)).toBeInTheDocument();
-    expect(screen.getByText(new RegExp(`${year}.*${title}.*All rights reserved.`, 'i'))).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        new RegExp(`${year}.*${title}.*All rights reserved.`, 'i')
+      )
+    ).toBeInTheDocument();
   });
 });

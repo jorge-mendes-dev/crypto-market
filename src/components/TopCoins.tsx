@@ -24,7 +24,7 @@ export default function TopCoins({
   tabsTitle,
   details,
   searchTitle,
-  notFound
+  notFound,
 }: TopCoinsProps) {
   const { data, isLoading } = useTopCoins();
   const [tabs, setTab] = useState(tabsTitle);
@@ -50,8 +50,8 @@ export default function TopCoins({
 
   return (
     <section className="container mx-auto px-4 py-6 md:px-8">
-      <div className="bg-indigo-100 dark:bg-zinc-900 rounded">
-        <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:flex lg:items-center lg:justify-between lg:px-8 ">
+      <div className="rounded bg-indigo-100 dark:bg-zinc-900">
+        <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:flex lg:items-center lg:justify-between lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-balance text-4xl font-semibold tracking-tight text-indigo-700 dark:text-white sm:text-5xl">
               {title}
@@ -63,11 +63,11 @@ export default function TopCoins({
         </div>
       </div>
 
-      <div className='mt-4 flex justify-between items-center gap-4'>
+      <div className="mt-4 flex items-center justify-between gap-4">
         <Tabs tabs={tabs} setTab={updateTabs} />
         <input
           type="text"
-          className="border border-gray-300 rounded-2xl px-3 py-2 w-full max-w-xs focus:outline-none focus:ring-2 bg-white text-indigo-700 focus:ring-indigo-400 dark:bg-zinc-800 dark:text-white"
+          className="w-full max-w-xs rounded-2xl border border-gray-300 bg-white px-3 py-2 text-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-400 dark:bg-zinc-800 dark:text-white"
           placeholder={searchTitle}
           value={search}
           onChange={e => setSearch(e.target.value)}
@@ -75,11 +75,11 @@ export default function TopCoins({
       </div>
 
       <div className="overflow-x-auto">
-      {filtered.length === 0 && (
-        <div className="text-center text-gray-500 dark:text-gray-400 mt-8 text-lg">
-          {notFound}
-        </div>
-      )}
+        {filtered.length === 0 && (
+          <div className="mt-8 text-center text-lg text-gray-500 dark:text-gray-400">
+            {notFound}
+          </div>
+        )}
 
         {tabs.find(tab => tab.current)?.name === 'Cards' ? (
           <div

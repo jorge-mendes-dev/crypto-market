@@ -19,7 +19,9 @@ describe('Header', () => {
     );
 
     expect(screen.getByText('Crypto Dashboard')).toBeInTheDocument();
-    expect(screen.getByText('Track your favorite cryptocurrencies in real time.')).toBeInTheDocument();
+    expect(
+      screen.getByText('Track your favorite cryptocurrencies in real time.')
+    ).toBeInTheDocument();
     expect(screen.getByText('v1.0')).toBeInTheDocument();
     expect(screen.getByTestId('lottie-animation')).toBeInTheDocument();
   });

@@ -98,7 +98,7 @@ export default function CoinDetailPage() {
 
           <Link
             href="/"
-            className="mt-6 inline-block text-indigo-700 dark:text-indigo-400 hover:underline"
+            className="mt-6 inline-block text-indigo-700 hover:underline dark:text-indigo-400"
           >
             {backHome}
           </Link>

@@ -7,9 +7,7 @@ export const AppConfig = {
   url: '/',
   bg_color: '#ffffff',
   theme_color: '#4f46e5',
-  navigation: [
-    { name: 'Home', href: '/' }
-  ],
+  navigation: [{ name: 'Home', href: '/' }],
   keywords: [
     'Finance',
     'Cryptocurrency',
@@ -51,5 +49,5 @@ export const AppConfig = {
     price: 'Price',
     marketCap: 'Market Cap',
     volume: 'Volume (24h)',
-  }
+  },
 };
