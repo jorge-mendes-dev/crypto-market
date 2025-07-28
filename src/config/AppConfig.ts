@@ -41,6 +41,8 @@ export const AppConfig = {
       { name: 'Cards', current: true },
       { name: 'Table', current: false },
     ],
+    search: 'Search by coin name...',
+    notFound: 'No coins found.',
   },
   seeMore: {
     title: 'See more about',

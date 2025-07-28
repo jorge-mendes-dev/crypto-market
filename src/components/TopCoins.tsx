@@ -13,6 +13,8 @@ interface TopCoinsProps {
   cardHeaders?: { name: string; key: string }[];
   tabsTitle: { name: string; current: boolean }[];
   details?: string;
+  searchTitle?: string;
+  notFound?: string;
 }
 
 export default function TopCoins({
@@ -21,9 +23,18 @@ export default function TopCoins({
   cardHeaders,
   tabsTitle,
   details,
+  searchTitle,
+  notFound
 }: TopCoinsProps) {
   const { data, isLoading } = useTopCoins();
   const [tabs, setTab] = useState(tabsTitle);
+  const [search, setSearch] = useState('');
+
+  const filtered = data
+    ? data.filter(coin =>
+        coin.name.toLowerCase().includes(search.toLowerCase())
+      )
+    : [];
 
   if (isLoading) {
     return <Skeleton type="grid" />;
@@ -52,16 +63,29 @@ export default function TopCoins({
         </div>
       </div>
 
-      <div className='mt-2'>
+      <div className='mt-4 flex justify-between items-center gap-4'>
         <Tabs tabs={tabs} setTab={updateTabs} />
+        <input
+          type="text"
+          className="border border-gray-300 rounded-2xl px-3 py-2 w-full max-w-xs focus:outline-none focus:ring-2 bg-white text-indigo-700 focus:ring-indigo-400 dark:bg-zinc-800 dark:text-white"
+          placeholder={searchTitle}
+          value={search}
+          onChange={e => setSearch(e.target.value)}
+        />
       </div>
 
       <div className="overflow-x-auto">
+      {filtered.length === 0 && (
+        <div className="text-center text-gray-500 dark:text-gray-400 mt-8 text-lg">
+          {notFound}
+        </div>
+      )}
+
         {tabs.find(tab => tab.current)?.name === 'Cards' ? (
           <div
             className={`mt-4 grid w-full grid-cols-1 gap-6 p-6 md:grid-cols-3 lg:grid-cols-4`}
           >
-            {data?.map((coin, index) => (
+            {filtered?.map((coin, index) => (
               <Card
                 key={coin.id}
                 id={coin.id}
@@ -79,7 +103,7 @@ export default function TopCoins({
         ) : (
           <div className="container mx-auto mt-6 px-6">
             <Table
-              data={data ? data : []}
+              data={filtered ? filtered : []}
               cardHeaders={cardHeaders}
               details={details}
             />
