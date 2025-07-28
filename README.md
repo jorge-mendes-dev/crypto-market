@@ -18,7 +18,7 @@ The app deploy is on vercel.
 - React-query
 - Error Boundaries
 - Tailwind css
-- Jest
+- Jest + React testing library
 - Prettier
 - Recharts
 

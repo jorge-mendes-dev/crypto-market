@@ -68,6 +68,7 @@ export default function Header({
         </div>
         <div className="mt-16 sm:mt-24 lg:mt-0 lg:shrink-0 lg:grow">
           <Lottie
+            data-testid="lottie-animation"
             animationData={cryptocurrency}
             loop={true}
             className="h-40 w-40 rounded-full border-2 border-indigo-700 shadow-lg sm:h-auto sm:w-full"
