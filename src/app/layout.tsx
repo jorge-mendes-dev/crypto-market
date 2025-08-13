@@ -7,7 +7,6 @@ import { ErrorBoundary } from '@/components/ErrorBoundary';
 import { ThemeProvider } from '@/context/ThemeContext';
 import { AppConfig } from '@/config/AppConfig';
 import { Providers } from './providers';
-import Crypto from '@/app/Crypto.svg';
 
 import './globals.css';
 
@@ -40,6 +39,7 @@ export default function RootLayout({
     locale,
     keywords,
     author,
+    logo,
   } = AppConfig;
   return (
     <html
@@ -62,7 +62,7 @@ export default function RootLayout({
       >
         <ThemeProvider>
           <div className="h-full min-h-screen bg-gray-50 dark:bg-zinc-900">
-            <Navbar logo={Crypto} navigation={navigation} title={title} />
+            <Navbar logo={logo} navigation={navigation} title={title} />
             <Header
               title={headerTitle}
               description={headerDescription}

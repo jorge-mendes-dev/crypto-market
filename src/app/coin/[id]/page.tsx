@@ -27,7 +27,7 @@ export default function CoinDetailPage() {
 
   return (
     <main>
-      <div className="bg-gray-50 px-6 py-32 dark:bg-zinc-900 lg:px-8">
+      <div className="bg-white px-6 py-32 dark:bg-zinc-800 lg:px-8">
         <div className="mx-auto max-w-3xl text-base/7 text-gray-700 dark:text-gray-400">
           <p className="text-base/7 font-semibold text-indigo-600 dark:text-indigo-400">
             {title}

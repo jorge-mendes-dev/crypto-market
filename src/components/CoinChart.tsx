@@ -74,7 +74,7 @@ export default function CoinChart({ prices }: CoinChartProps) {
         },
         ticks: {},
         grid: {
-          color: 'rgba(229, 231, 235, 0.2)',
+          color: 'rgba(229, 231, 235, 0.3)',
         },
       },
       y: {
@@ -87,7 +87,7 @@ export default function CoinChart({ prices }: CoinChartProps) {
           color: '#4B5563',
         },
         grid: {
-          color: 'rgba(229, 231, 235, 0.2)',
+          color: 'rgba(229, 231, 235, 0.3)',
         },
       },
     },

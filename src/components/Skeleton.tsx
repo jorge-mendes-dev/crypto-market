@@ -16,7 +16,7 @@ const Grid = ({ items }: SkeletonProps) => (
 );
 
 const Card = () => (
-  <div className="animate-pulse overflow-hidden rounded-2xl bg-white shadow-sm dark:bg-zinc-800">
+  <div className="animate-pulse overflow-hidden rounded-2xl bg-gray-100 shadow-sm dark:bg-zinc-700">
     <div className="flex flex-col gap-2 px-4 py-5 sm:p-6">
       <div className="flex flex-row items-start gap-4">
         <div className="flex flex-1 flex-col gap-1">

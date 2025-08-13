@@ -50,7 +50,7 @@ export default function TopCoins({
 
   return (
     <section className="container mx-auto px-4 py-6 md:px-8">
-      <div className="rounded bg-indigo-100 dark:bg-zinc-900">
+      <div className="rounded bg-indigo-100 dark:bg-indigo-900">
         <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:flex lg:items-center lg:justify-between lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-balance text-4xl font-semibold tracking-tight text-indigo-700 dark:text-white sm:text-5xl">
@@ -67,7 +67,7 @@ export default function TopCoins({
         <Tabs tabs={tabs} setTab={updateTabs} />
         <input
           type="text"
-          className="w-full max-w-xs rounded-2xl border border-gray-300 bg-white px-3 py-2 text-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-400 dark:bg-zinc-800 dark:text-white"
+          className="w-full max-w-xs rounded border border-indigo-400 bg-white px-2 py-2 text-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-400 dark:border-indigo-900 dark:bg-zinc-800 dark:text-white"
           placeholder={searchTitle}
           value={search}
           onChange={e => setSearch(e.target.value)}

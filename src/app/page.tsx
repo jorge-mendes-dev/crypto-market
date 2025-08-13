@@ -12,7 +12,7 @@ export default function Home() {
     notFound,
   } = AppConfig.topCryptos;
   return (
-    <main className="bg-gray-50 py-10 dark:bg-zinc-900">
+    <main className="bg-white py-10 dark:bg-zinc-800">
       <TopCoins
         title={title}
         description={description}

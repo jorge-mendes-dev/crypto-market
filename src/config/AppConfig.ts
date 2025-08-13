@@ -1,3 +1,9 @@
+import git from '@/assets/images/git.jpg';
+import jorge from '@/assets/images/jorge_mendes.png';
+import notebook from '@/assets/images/notebook.jpg';
+import code from '@/assets/images/code.jpg';
+import Crypto from '@/app/Crypto.svg';
+
 export const AppConfig = {
   title: 'Coin Market',
   description: 'A Next.js application for Coin Market',
@@ -7,7 +13,11 @@ export const AppConfig = {
   url: '/',
   bg_color: '#ffffff',
   theme_color: '#4f46e5',
-  navigation: [{ name: 'Home', href: '/' }],
+  logo: Crypto,
+  navigation: [
+    { name: 'Home', href: '/' },
+    { name: 'About', href: '/about' },
+  ],
   keywords: [
     'Finance',
     'Cryptocurrency',
@@ -49,5 +59,55 @@ export const AppConfig = {
     price: 'Price',
     marketCap: 'Market Cap',
     volume: 'Volume (24h)',
+  },
+  about: {
+    title: 'About Me',
+    subtitle: 'Discover My Journey',
+    paragraphs: [
+      'Senior Software Engineer with 9 years of experience, developing applications or helping growing existing projects, using mainly with JavaScript, React, Zustand, TypeScript.',
+    ],
+    action: {
+      name: 'Know more',
+      href: 'https://www.jorgemendes.com.br/',
+    },
+    list: [
+      'Experience maintaining legacy web applications,',
+      'Experience in architecture and building and documenting web applications,',
+      'Experience with modern frontend technologies',
+      'Aptitude to quickly learn new languages and technologies,',
+      'Strong ability to work independently and self-guided,',
+    ],
+    socialMedia: [
+      {
+        name: 'Linkedin',
+        href: 'https://www.linkedin.com/in/jorge-mendes-dev/',
+      },
+      {
+        name: 'Github',
+        href: 'https://github.com/jorge-mendes-dev',
+      },
+      {
+        name: 'Gmail',
+        href: 'mailto:jorge.mendesx@gmail.com',
+      },
+    ],
+    pictures: [
+      {
+        src: jorge,
+        alt: 'Jorge Mendes',
+      },
+      {
+        src: git,
+        alt: 'Git',
+      },
+      {
+        src: code,
+        alt: 'Code',
+      },
+      {
+        src: notebook,
+        alt: 'Notebook',
+      },
+    ],
   },
 };

@@ -14,7 +14,7 @@ export default function Table({
   details,
 }: TableProps): React.JSX.Element {
   return (
-    <table className="min-w-full border-collapse transform cursor-pointer overflow-hidden rounded-lg bg-gray-100 shadow-lg transition duration-300 ease-in-out dark:bg-zinc-800">
+    <table className="min-w-full border-collapse transform cursor-pointer overflow-hidden rounded-lg bg-gray-100 shadow-lg transition duration-300 ease-in-out dark:bg-zinc-700">
       <thead className="bg-indigo-100 text-left text-indigo-600 dark:bg-indigo-700 dark:text-zinc-300">
         <tr>
           {cardHeaders?.map(header => (
@@ -28,7 +28,7 @@ export default function Table({
         {data?.map((coin, index) => (
           <tr
             key={coin.id}
-            className="border-t border-zinc-200 transition hover:bg-zinc-300 dark:border-zinc-600 dark:hover:bg-zinc-700"
+            className="border-t border-zinc-200 transition hover:bg-zinc-300 dark:border-zinc-600 dark:hover:bg-zinc-600"
           >
             <td className="px-4 py-3 text-sm dark:text-zinc-100">
               {index + 1}
@@ -44,7 +44,9 @@ export default function Table({
               />
               <span className="text-sm font-medium text-zinc-800 dark:text-zinc-100">
                 {coin.name}{' '}
-                <span className="uppercase text-zinc-500">({coin.symbol})</span>
+                <span className="uppercase text-zinc-500 dark:text-zinc-400">
+                  ({coin.symbol})
+                </span>
               </span>
             </td>
             <td className="px-4 py-3 text-sm text-zinc-800 dark:text-zinc-100">
