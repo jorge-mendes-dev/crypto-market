@@ -29,7 +29,7 @@ export default function Navbar({
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="absolute inset-x-0 top-0 z-50">
+    <header className="absolute inset-x-0 top-0 z-50 fade-in-50">
       <nav
         aria-label="Global"
         className="flex items-center justify-between p-6 lg:px-8"
@@ -133,12 +133,12 @@ export default function Navbar({
                   <span className="sr-only">Toggle Theme</span>
                   {isDarkMode ? (
                     <SunIcon
-                      className="size-6 bg-yellow-50 text-yellow-500"
+                      className="size-6 text-yellow-500"
                       aria-hidden="true"
                     />
                   ) : (
                     <MoonIcon
-                      className="size-6 bg-blue-50 text-blue-500"
+                      className="size-6 text-blue-500"
                       aria-hidden="true"
                     />
                   )}

@@ -8,20 +8,20 @@ const AboutPage = () => {
     about;
 
   return (
-    <main className="overflow-hidden bg-white py-32 dark:bg-zinc-800">
+    <main className="overflow-hidden bg-white py-32 dark:bg-zinc-800 animate-fade-in">
       <div className="mx-auto max-w-7xl px-6 lg:flex lg:px-8">
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-12 gap-y-16 lg:mx-0 lg:min-w-full lg:max-w-none lg:flex-none lg:gap-y-8">
           <div className="lg:col-end-1 lg:w-full lg:max-w-lg lg:pb-8">
             <h2 className="text-4xl font-semibold tracking-tight text-gray-900 dark:text-indigo-700 sm:text-5xl">
               {title}
             </h2>
-            <p className="mt-6 text-xl/8 text-gray-700 dark:text-indigo-300">
+            <p className="mt-6 text-xl/8 text-indigo-700 dark:text-indigo-300">
               {subtitle}
             </p>
             {paragraphs.map((paragraph, index) => (
               <p
                 key={index}
-                className="text-small mt-6 text-gray-600 dark:text-gray-200"
+                className="text-small mt-6 text-gray-700 dark:text-gray-200"
               >
                 {paragraph}
               </p>
@@ -40,7 +40,6 @@ const AboutPage = () => {
                 className="shadow-xs rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
                 {action.name}
-                <span aria-hidden="true">&rarr;</span>
               </Link>
             </div>
           </div>

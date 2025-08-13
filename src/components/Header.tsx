@@ -66,7 +66,7 @@ export default function Header({
             {description}
           </p>
         </div>
-        <div className="mt-16 sm:mt-24 lg:mt-0 lg:shrink-0 lg:grow">
+        <div className="mt-16 sm:mt-24 lg:mt-0 lg:shrink-0 lg:grow flex justify-center items-center">
           <Lottie
             data-testid="lottie-animation"
             animationData={cryptocurrency}
